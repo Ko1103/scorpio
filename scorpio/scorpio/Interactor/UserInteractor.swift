@@ -15,7 +15,6 @@ protocol UserInteractorInterface: class {
     func getUsers() -> [User]
 }
 
-
 final class UserInteractor: Interactor, UserInteractorInterface {
     func getUser(id: String) -> User? {
         let realm = try! Realm()
