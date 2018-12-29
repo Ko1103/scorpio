@@ -149,6 +149,7 @@
 		E63ADC8121D74B5800B290B5 /* scorpio */ = {
 			isa = PBXGroup;
 			children = (
+				E63ADCC121D78AD600B290B5 /* Module */,
 				E63ADCBC21D7597100B290B5 /* Interactor */,
 				E63ADCB021D74DFE00B290B5 /* Entity */,
 				E63ADC8221D74B5800B290B5 /* AppDelegate.swift */,
@@ -197,6 +198,37 @@
 				E63ADCBF21D75DA600B290B5 /* UserInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E63ADCC121D78AD600B290B5 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				E63ADCC421D78B4700B290B5 /* NewQuestionnaire */,
+				E63ADCC321D78B4400B290B5 /* Questionnaire */,
+				E63ADCC221D78AE400B290B5 /* Outcome */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		E63ADCC221D78AE400B290B5 /* Outcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Outcome;
+			sourceTree = "<group>";
+		};
+		E63ADCC321D78B4400B290B5 /* Questionnaire */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Questionnaire;
+			sourceTree = "<group>";
+		};
+		E63ADCC421D78B4700B290B5 /* NewQuestionnaire */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewQuestionnaire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
