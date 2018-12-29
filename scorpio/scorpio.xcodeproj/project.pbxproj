@@ -17,6 +17,11 @@
 		E63ADC8D21D74B5A00B290B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8B21D74B5A00B290B5 /* LaunchScreen.storyboard */; };
 		E63ADC9821D74B5A00B290B5 /* scorpioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADC9721D74B5A00B290B5 /* scorpioTests.swift */; };
 		E63ADCA321D74B5A00B290B5 /* scorpioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCA221D74B5A00B290B5 /* scorpioUITests.swift */; };
+		E63ADCB221D74E7400B290B5 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB121D74E7400B290B5 /* Question.swift */; };
+		E63ADCB421D74F1900B290B5 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB321D74F1900B290B5 /* Questionnaire.swift */; };
+		E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB521D7505A00B290B5 /* Answer.swift */; };
+		E63ADCB821D7531700B290B5 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB721D7531700B290B5 /* Choice.swift */; };
+		E63ADCBA21D7546400B290B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB921D7546400B290B5 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		E63ADC9E21D74B5A00B290B5 /* scorpioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scorpioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63ADCA221D74B5A00B290B5 /* scorpioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scorpioUITests.swift; sourceTree = "<group>"; };
 		E63ADCA421D74B5A00B290B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E63ADCB121D74E7400B290B5 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E63ADCB321D74F1900B290B5 /* Questionnaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
+		E63ADCB521D7505A00B290B5 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		E63ADCB721D7531700B290B5 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
+		E63ADCB921D7546400B290B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +147,7 @@
 		E63ADC8121D74B5800B290B5 /* scorpio */ = {
 			isa = PBXGroup;
 			children = (
+				E63ADCB021D74DFE00B290B5 /* model */,
 				E63ADC8221D74B5800B290B5 /* AppDelegate.swift */,
 				E63ADC8421D74B5800B290B5 /* ViewController.swift */,
 				E63ADC8621D74B5800B290B5 /* Main.storyboard */,
@@ -163,6 +174,18 @@
 				E63ADCA421D74B5A00B290B5 /* Info.plist */,
 			);
 			path = scorpioUITests;
+			sourceTree = "<group>";
+		};
+		E63ADCB021D74DFE00B290B5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E63ADCB321D74F1900B290B5 /* Questionnaire.swift */,
+				E63ADCB121D74E7400B290B5 /* Question.swift */,
+				E63ADCB721D7531700B290B5 /* Choice.swift */,
+				E63ADCB521D7505A00B290B5 /* Answer.swift */,
+				E63ADCB921D7546400B290B5 /* User.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,8 +400,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E63ADCB821D7531700B290B5 /* Choice.swift in Sources */,
+				E63ADCB221D74E7400B290B5 /* Question.swift in Sources */,
+				E63ADCB421D74F1900B290B5 /* Questionnaire.swift in Sources */,
+				E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */,
 				E63ADC8521D74B5800B290B5 /* ViewController.swift in Sources */,
 				E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */,
+				E63ADCBA21D7546400B290B5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
