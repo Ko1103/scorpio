@@ -16,5 +16,6 @@ class Answer: Object {
     @objc dynamic var questionnaireId = ""
     @objc dynamic var questionId = ""
     @objc dynamic var choiceId = ""
-    @objc dynamic var answeredAt = Date()
+    @objc dynamic var createdAt = Date()
+    @objc dynamic var updatedAt = Date()
 }

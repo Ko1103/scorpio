@@ -12,5 +12,8 @@ import RealmSwift
 
 class Questionnaire: Object {
     @objc dynamic var id = ""
+    @objc dynamic var title = ""
     var questionsId = List<String>()
+    @objc dynamic var createdAt = Date()
+    @objc dynamic var updatedAt = Date()
 }

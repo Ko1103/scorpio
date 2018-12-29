@@ -13,4 +13,6 @@ import RealmSwift
 class User: Object {
     @objc dynamic var id = ""
     @objc dynamic var name = ""
+    @objc dynamic var createdAt = Date()
+    @objc dynamic var updatedAt = Date()
 }

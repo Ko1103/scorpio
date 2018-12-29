@@ -13,4 +13,6 @@ import RealmSwift
 class Choice: Object {
     @objc dynamic var id = ""
     @objc dynamic var title = ""
+    @objc dynamic var createdAt = Date()
+    @objc dynamic var updatedAt = Date()
 }

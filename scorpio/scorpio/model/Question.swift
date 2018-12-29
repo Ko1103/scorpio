@@ -14,4 +14,7 @@ class Question: Object {
     @objc dynamic var typeId = ""
     var choicesId = List<String>()
     @objc dynamic var required = false
+    @objc dynamic var multipleAnswer = false
+    @objc dynamic var createdAt = Date()
+    @objc dynamic var updatedAt = Date()
 }
