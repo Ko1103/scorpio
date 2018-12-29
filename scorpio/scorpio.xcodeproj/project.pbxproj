@@ -25,6 +25,7 @@
 		E63ADCC021D75DA600B290B5 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCBF21D75DA600B290B5 /* UserInteractor.swift */; };
 		E63ADCCB21D78E6000B290B5 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCC921D78E6000B290B5 /* RadioTableViewCell.swift */; };
 		E63ADCCC21D78E6000B290B5 /* RadioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63ADCCA21D78E6000B290B5 /* RadioTableViewCell.xib */; };
+		E63ADCCF21D7946600B290B5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCCE21D7946600B290B5 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E63ADCBF21D75DA600B290B5 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		E63ADCC921D78E6000B290B5 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
 		E63ADCCA21D78E6000B290B5 /* RadioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadioTableViewCell.xib; sourceTree = "<group>"; };
+		E63ADCCE21D7946600B290B5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		E63ADC8121D74B5800B290B5 /* scorpio */ = {
 			isa = PBXGroup;
 			children = (
+				E63ADCCD21D7945300B290B5 /* Extensions */,
 				E63ADCC521D78E1100B290B5 /* Utilities */,
 				E63ADCC121D78AD600B290B5 /* Module */,
 				E63ADCBC21D7597100B290B5 /* Interactor */,
@@ -267,6 +270,14 @@
 			children = (
 			);
 			path = CheckBoxTableViewCell;
+			sourceTree = "<group>";
+		};
+		E63ADCCD21D7945300B290B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E63ADCCE21D7946600B290B5 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63ADCCB21D78E6000B290B5 /* RadioTableViewCell.swift in Sources */,
+				E63ADCCF21D7946600B290B5 /* UIColor+Extensions.swift in Sources */,
 				E63ADCB821D7531700B290B5 /* Choice.swift in Sources */,
 				E63ADCC021D75DA600B290B5 /* UserInteractor.swift in Sources */,
 				E63ADCB221D74E7400B290B5 /* Question.swift in Sources */,

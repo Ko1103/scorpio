@@ -10,15 +10,26 @@ import UIKit
 
 class RadioTableViewCell: UITableViewCell {
 
+    @IBOutlet private weak var radioImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = UIColor.spWhite
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
+
+    func updateCell(isChecked: Bool, title: String? = nil) {
+        if isChecked {
+            self.titleLabel.textColor = UIColor.spDarkBlue
+        } else {
+            self.titleLabel.textColor = UIColor.spBlue
+        }
+        if let title = title, !title.isEmpty {
+            self.titleLabel.text = title
+        }
+    }
 }
