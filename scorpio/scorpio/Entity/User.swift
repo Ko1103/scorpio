@@ -15,4 +15,8 @@ class User: Object {
     @objc dynamic var name = ""
     @objc dynamic var createdAt = Date()
     @objc dynamic var updatedAt = Date()
+
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

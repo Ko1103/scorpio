@@ -21,6 +21,7 @@
 		E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB521D7505A00B290B5 /* Answer.swift */; };
 		E63ADCB821D7531700B290B5 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB721D7531700B290B5 /* Choice.swift */; };
 		E63ADCBA21D7546400B290B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCB921D7546400B290B5 /* User.swift */; };
+		E63ADCBE21D75AFE00B290B5 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCBD21D75AFE00B290B5 /* Interactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E63ADCB521D7505A00B290B5 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		E63ADCB721D7531700B290B5 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		E63ADCB921D7546400B290B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E63ADCBD21D75AFE00B290B5 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,8 @@
 		E63ADC8121D74B5800B290B5 /* scorpio */ = {
 			isa = PBXGroup;
 			children = (
-				E63ADCB021D74DFE00B290B5 /* model */,
+				E63ADCBC21D7597100B290B5 /* Interactor */,
+				E63ADCB021D74DFE00B290B5 /* Entity */,
 				E63ADC8221D74B5800B290B5 /* AppDelegate.swift */,
 				E63ADC8621D74B5800B290B5 /* Main.storyboard */,
 				E63ADC8921D74B5A00B290B5 /* Assets.xcassets */,
@@ -173,7 +176,7 @@
 			path = scorpioUITests;
 			sourceTree = "<group>";
 		};
-		E63ADCB021D74DFE00B290B5 /* model */ = {
+		E63ADCB021D74DFE00B290B5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				E63ADCB321D74F1900B290B5 /* Questionnaire.swift */,
@@ -182,7 +185,15 @@
 				E63ADCB521D7505A00B290B5 /* Answer.swift */,
 				E63ADCB921D7546400B290B5 /* User.swift */,
 			);
-			path = model;
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E63ADCBC21D7597100B290B5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E63ADCBD21D75AFE00B290B5 /* Interactor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +431,7 @@
 				E63ADCB421D74F1900B290B5 /* Questionnaire.swift in Sources */,
 				E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */,
 				E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */,
+				E63ADCBE21D75AFE00B290B5 /* Interactor.swift in Sources */,
 				E63ADCBA21D7546400B290B5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
