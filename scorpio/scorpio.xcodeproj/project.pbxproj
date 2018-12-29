@@ -29,6 +29,10 @@
 		E63ADCD221D7A11E00B290B5 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCD121D7A11E00B290B5 /* RootWireframe.swift */; };
 		E63ADCD421D7A13300B290B5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCD321D7A13300B290B5 /* RootViewController.swift */; };
 		E63ADCD721D7A22B00B290B5 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCD621D7A22B00B290B5 /* LaunchViewController.swift */; };
+		E63ADCDA21D7A64200B290B5 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCD921D7A64200B290B5 /* MainTabViewController.swift */; };
+		E63ADCDD21D7A77600B290B5 /* NewQuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCDC21D7A77600B290B5 /* NewQuestionnaireViewController.swift */; };
+		E63ADCDF21D7A7A700B290B5 /* NewQuestionnaireViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63ADCDE21D7A7A700B290B5 /* NewQuestionnaireViewController.storyboard */; };
+		E63ADCE221D7AA9B00B290B5 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADCE121D7AA9B00B290B5 /* StoryboardInstantiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,10 @@
 		E63ADCD121D7A11E00B290B5 /* RootWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		E63ADCD321D7A13300B290B5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E63ADCD621D7A22B00B290B5 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		E63ADCD921D7A64200B290B5 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		E63ADCDC21D7A77600B290B5 /* NewQuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionnaireViewController.swift; sourceTree = "<group>"; };
+		E63ADCDE21D7A7A700B290B5 /* NewQuestionnaireViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewQuestionnaireViewController.storyboard; sourceTree = "<group>"; };
+		E63ADCE121D7AA9B00B290B5 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 		E63ADC8121D74B5800B290B5 /* scorpio */ = {
 			isa = PBXGroup;
 			children = (
+				E63ADCE021D7AA5700B290B5 /* Protocols */,
 				E63ADCD521D7A21600B290B5 /* Application */,
 				E63ADCCD21D7945300B290B5 /* Extensions */,
 				E63ADCC521D78E1100B290B5 /* Utilities */,
@@ -218,19 +227,12 @@
 		E63ADCC121D78AD600B290B5 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E63ADCD821D7A62A00B290B5 /* MainTab */,
 				E63ADCD021D7A11300B290B5 /* Root */,
 				E63ADCC421D78B4700B290B5 /* NewQuestionnaire */,
 				E63ADCC321D78B4400B290B5 /* Questionnaire */,
-				E63ADCC221D78AE400B290B5 /* Outcome */,
 			);
 			path = Module;
-			sourceTree = "<group>";
-		};
-		E63ADCC221D78AE400B290B5 /* Outcome */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Outcome;
 			sourceTree = "<group>";
 		};
 		E63ADCC321D78B4400B290B5 /* Questionnaire */ = {
@@ -243,6 +245,7 @@
 		E63ADCC421D78B4700B290B5 /* NewQuestionnaire */ = {
 			isa = PBXGroup;
 			children = (
+				E63ADCDB21D7A74400B290B5 /* View */,
 			);
 			path = NewQuestionnaire;
 			sourceTree = "<group>";
@@ -303,6 +306,31 @@
 				E63ADCD621D7A22B00B290B5 /* LaunchViewController.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		E63ADCD821D7A62A00B290B5 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				E63ADCD921D7A64200B290B5 /* MainTabViewController.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		E63ADCDB21D7A74400B290B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E63ADCDC21D7A77600B290B5 /* NewQuestionnaireViewController.swift */,
+				E63ADCDE21D7A7A700B290B5 /* NewQuestionnaireViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E63ADCE021D7AA5700B290B5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E63ADCE121D7AA9B00B290B5 /* StoryboardInstantiable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +444,7 @@
 			files = (
 				E63ADC8D21D74B5A00B290B5 /* LaunchScreen.storyboard in Resources */,
 				E63ADCCC21D78E6000B290B5 /* RadioTableViewCell.xib in Resources */,
+				E63ADCDF21D7A7A700B290B5 /* NewQuestionnaireViewController.storyboard in Resources */,
 				E63ADC8A21D74B5A00B290B5 /* Assets.xcassets in Resources */,
 				E63ADC8821D74B5800B290B5 /* Main.storyboard in Resources */,
 			);
@@ -536,11 +565,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E63ADCDD21D7A77600B290B5 /* NewQuestionnaireViewController.swift in Sources */,
 				E63ADCD721D7A22B00B290B5 /* LaunchViewController.swift in Sources */,
 				E63ADCCB21D78E6000B290B5 /* RadioTableViewCell.swift in Sources */,
 				E63ADCCF21D7946600B290B5 /* UIColor+Extensions.swift in Sources */,
 				E63ADCD421D7A13300B290B5 /* RootViewController.swift in Sources */,
 				E63ADCB821D7531700B290B5 /* Choice.swift in Sources */,
+				E63ADCDA21D7A64200B290B5 /* MainTabViewController.swift in Sources */,
 				E63ADCC021D75DA600B290B5 /* UserInteractor.swift in Sources */,
 				E63ADCB221D74E7400B290B5 /* Question.swift in Sources */,
 				E63ADCB421D74F1900B290B5 /* Questionnaire.swift in Sources */,
@@ -548,6 +579,7 @@
 				E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */,
 				E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */,
 				E63ADCBE21D75AFE00B290B5 /* Interactor.swift in Sources */,
+				E63ADCE221D7AA9B00B290B5 /* StoryboardInstantiable.swift in Sources */,
 				E63ADCBA21D7546400B290B5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

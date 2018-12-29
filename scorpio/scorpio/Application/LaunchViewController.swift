@@ -8,4 +8,16 @@
 
 import UIKit
 
-final class LaunchViewController: UIViewController {}
+final class LaunchViewController: UIViewController {
+    let wireframe = RootWireframe()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let navigation = UINavigationController()
+        navigation.setNavigationBarHidden(true, animated: false)
+    }
+}
