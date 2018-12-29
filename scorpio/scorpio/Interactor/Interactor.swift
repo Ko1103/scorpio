@@ -7,6 +7,27 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
-protocol Interactor {
+protocol InteractorInterface {
+    static func update<T: Object>(object: T)
+    static func delete<T: Object>(object: T)
+}
+
+class Interactor: InteractorInterface {
+
+    class func update<T: Object>(object: T) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(object, update: true)
+        }
+    }
+
+    class func delete<T: Object>(object: T) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(object)
+        }
+    }
 }
