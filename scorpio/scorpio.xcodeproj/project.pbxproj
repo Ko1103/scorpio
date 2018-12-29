@@ -11,7 +11,6 @@
 		BC20C3240938B8F35AECB061 /* Pods_scorpio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835C7B1EC26D48B4B168245 /* Pods_scorpio.framework */; };
 		D7DE86F364DF2EAC0F0042D3 /* Pods_scorpioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D575517010CC99EDF82DDB /* Pods_scorpioTests.framework */; };
 		E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADC8221D74B5800B290B5 /* AppDelegate.swift */; };
-		E63ADC8521D74B5800B290B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADC8421D74B5800B290B5 /* ViewController.swift */; };
 		E63ADC8821D74B5800B290B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8621D74B5800B290B5 /* Main.storyboard */; };
 		E63ADC8A21D74B5A00B290B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8921D74B5A00B290B5 /* Assets.xcassets */; };
 		E63ADC8D21D74B5A00B290B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8B21D74B5A00B290B5 /* LaunchScreen.storyboard */; };
@@ -53,7 +52,6 @@
 		DD04B5E4C362DE516A41D2A2 /* Pods-scorpioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scorpioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scorpioUITests/Pods-scorpioUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E63ADC7F21D74B5800B290B5 /* scorpio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scorpio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63ADC8221D74B5800B290B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E63ADC8421D74B5800B290B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E63ADC8721D74B5800B290B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E63ADC8921D74B5A00B290B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E63ADC8C21D74B5A00B290B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			children = (
 				E63ADCB021D74DFE00B290B5 /* model */,
 				E63ADC8221D74B5800B290B5 /* AppDelegate.swift */,
-				E63ADC8421D74B5800B290B5 /* ViewController.swift */,
 				E63ADC8621D74B5800B290B5 /* Main.storyboard */,
 				E63ADC8921D74B5A00B290B5 /* Assets.xcassets */,
 				E63ADC8B21D74B5A00B290B5 /* LaunchScreen.storyboard */,
@@ -200,6 +197,7 @@
 				E63ADC7C21D74B5800B290B5 /* Frameworks */,
 				E63ADC7D21D74B5800B290B5 /* Resources */,
 				B44E90A2F04BCC82DD31B0B3 /* [CP] Embed Pods Frameworks */,
+				E63ADCBB21D7551A00B290B5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -375,6 +373,23 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-scorpio/Pods-scorpio-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E63ADCBB21D7551A00B290B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		F51E11B197FA850E8849ED52 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,7 +419,6 @@
 				E63ADCB221D74E7400B290B5 /* Question.swift in Sources */,
 				E63ADCB421D74F1900B290B5 /* Questionnaire.swift in Sources */,
 				E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */,
-				E63ADC8521D74B5800B290B5 /* ViewController.swift in Sources */,
 				E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */,
 				E63ADCBA21D7546400B290B5 /* User.swift in Sources */,
 			);
@@ -584,6 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = scorpio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,7 +606,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yamaura.scorpio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -602,6 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = scorpio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,7 +625,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yamaura.scorpio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
