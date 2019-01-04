@@ -48,5 +48,12 @@ struct RootWireframe: Wireframe {
             navigationController.popToRootViewController(animated: false)
         }
     }
+}
 
+extension RootWireframe {
+    func transitionToMain() {
+        let navigation = UINavigationController()
+        navigation.setViewControllers([QuestionnaireViewController.instantiate()], animated: false)
+        self.transition(to: navigation)
+    }
 }

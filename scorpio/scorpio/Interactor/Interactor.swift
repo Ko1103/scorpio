@@ -10,9 +10,11 @@ import Foundation
 import Realm
 import RealmSwift
 
-protocol InteractorInterface {
+private protocol InteractorInterface {
     static func update<T: Object>(object: T)
+    static func update<T: Object>(objects: [T])
     static func delete<T: Object>(object: T)
+    static func delete<T: Object>(objects: [T])
 }
 
 class Interactor: InteractorInterface {
@@ -24,10 +26,29 @@ class Interactor: InteractorInterface {
         }
     }
 
+    class func update<T: Object>(objects: [T]) {
+        let realm = try! Realm()
+        try! realm.write {
+            objects.forEach({ realm.add($0, update: true) })
+        }
+    }
+
     class func delete<T: Object>(object: T) {
         let realm = try! Realm()
         try! realm.write {
             realm.delete(object)
         }
+    }
+
+    class func delete<T: Object>(objects: [T]) {
+        let realm = try! Realm()
+        try! realm.write {
+            objects.forEach({ realm.add($0, update: true) })
+        }
+    }
+
+    class func get<T: Object>(object: T.Type, primarykey: String) -> T? {
+        let realm = try! Realm()
+        return realm.object(ofType: T.self, forPrimaryKey: primarykey)
     }
 }

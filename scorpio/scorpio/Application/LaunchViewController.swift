@@ -13,11 +13,13 @@ final class LaunchViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.view.backgroundColor = UIColor.spWhite
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let navigation = UINavigationController()
         navigation.setNavigationBarHidden(true, animated: false)
+        self.wireframe.transitionToMain()
     }
 }
