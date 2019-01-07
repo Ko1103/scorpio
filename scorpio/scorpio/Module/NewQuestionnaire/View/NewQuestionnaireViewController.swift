@@ -19,11 +19,11 @@ class NewQuestionnaireViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "次へ", style: .plain, target: self, action: #selector(self.createQuestionnaireAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "作成", style: .plain, target: self, action: #selector(self.createQuestionnaireAction))
         // setup view delegate
         self.titleTextField.delegate = self
         self.titleTextField.returnKeyType = .done
-        self.titleTextField.placeholder = "ここにタイトルを入力してください。"
+        self.titleTextField.placeholder = "アンケートのタイトルを入力"
         self.questionCountStepper.maximumValue = 100
         self.questionCountStepper.minimumValue = 1
         self.questionCountStepper.stepValue = 1
@@ -77,6 +77,12 @@ extension NewQuestionnaireViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select tableview")
+        let editQuestion = EditQuestionViewController.instantiate()
+        if self.questions.count > indexPath.row {
+            let question = self.questions[indexPath.row]
+            editQuestion.question = question
+        }
+        self.navigationController?.pushViewController(editQuestion, animated: true)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

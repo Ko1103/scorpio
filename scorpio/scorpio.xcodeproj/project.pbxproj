@@ -10,6 +10,8 @@
 		4380DB5C348F3C11148D3B46 /* Pods_scorpioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0863C820B926F6265AE65440 /* Pods_scorpioUITests.framework */; };
 		BC20C3240938B8F35AECB061 /* Pods_scorpio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835C7B1EC26D48B4B168245 /* Pods_scorpio.framework */; };
 		D7DE86F364DF2EAC0F0042D3 /* Pods_scorpioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D575517010CC99EDF82DDB /* Pods_scorpioTests.framework */; };
+		E6210E7921E33BE4005C7205 /* EditQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6210E7821E33BE4005C7205 /* EditQuestionViewController.swift */; };
+		E6210E7B21E33BF1005C7205 /* EditQuestionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6210E7A21E33BF1005C7205 /* EditQuestionViewController.storyboard */; };
 		E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADC8221D74B5800B290B5 /* AppDelegate.swift */; };
 		E63ADC8821D74B5800B290B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8621D74B5800B290B5 /* Main.storyboard */; };
 		E63ADC8A21D74B5A00B290B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8921D74B5A00B290B5 /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		C73A5F2ADA02585422BC6363 /* Pods-scorpio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scorpio.release.xcconfig"; path = "Pods/Target Support Files/Pods-scorpio/Pods-scorpio.release.xcconfig"; sourceTree = "<group>"; };
 		D5D575517010CC99EDF82DDB /* Pods_scorpioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scorpioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD04B5E4C362DE516A41D2A2 /* Pods-scorpioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scorpioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scorpioUITests/Pods-scorpioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E6210E7821E33BE4005C7205 /* EditQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionViewController.swift; sourceTree = "<group>"; };
+		E6210E7A21E33BF1005C7205 /* EditQuestionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditQuestionViewController.storyboard; sourceTree = "<group>"; };
 		E63ADC7F21D74B5800B290B5 /* scorpio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scorpio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63ADC8221D74B5800B290B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E63ADC8721D74B5800B290B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +158,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E6210E7621E33BBF005C7205 /* EditQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				E6210E7721E33BD5005C7205 /* View */,
+			);
+			path = EditQuestion;
+			sourceTree = "<group>";
+		};
+		E6210E7721E33BD5005C7205 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6210E7821E33BE4005C7205 /* EditQuestionViewController.swift */,
+				E6210E7A21E33BF1005C7205 /* EditQuestionViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E63ADC7621D74B5800B290B5 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +257,7 @@
 		E63ADCC121D78AD600B290B5 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E6210E7621E33BBF005C7205 /* EditQuestion */,
 				E64DB53F21DF5A4500069520 /* Result */,
 				E63ADCE321D7B55800B290B5 /* Radio */,
 				E63ADCD821D7A62A00B290B5 /* MainTab */,
@@ -497,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6210E7B21E33BF1005C7205 /* EditQuestionViewController.storyboard in Resources */,
 				E63ADC8D21D74B5A00B290B5 /* LaunchScreen.storyboard in Resources */,
 				E63ADCCC21D78E6000B290B5 /* RadioTableViewCell.xib in Resources */,
 				E63ADCDF21D7A7A700B290B5 /* NewQuestionnaireViewController.storyboard in Resources */,
@@ -634,6 +657,7 @@
 				E63ADCB221D74E7400B290B5 /* Question.swift in Sources */,
 				E63ADCB421D74F1900B290B5 /* Questionnaire.swift in Sources */,
 				E63ADCD221D7A11E00B290B5 /* RootWireframe.swift in Sources */,
+				E6210E7921E33BE4005C7205 /* EditQuestionViewController.swift in Sources */,
 				E63ADCE621D7B57100B290B5 /* QuestionViewController.swift in Sources */,
 				E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */,
 				E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */,
