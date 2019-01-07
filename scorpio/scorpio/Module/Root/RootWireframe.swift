@@ -36,7 +36,7 @@ struct RootWireframe: Wireframe {
         guard let root = appDelegate.window?.rootViewController as? RootViewController else { return }
         if let child = root.children.first {
             guard let navigationController = child as? UINavigationController else { return }
-            navigationController.pushViewController(destination, animated: false)
+            navigationController.pushViewController(destination, animated: true)
         }
     }
 
@@ -45,7 +45,7 @@ struct RootWireframe: Wireframe {
         guard let root = appDelegate.window?.rootViewController as? RootViewController else { return }
         if let child = root.children.first {
             guard let navigationController = child as? UINavigationController else { return }
-            navigationController.popToRootViewController(animated: false)
+            navigationController.popToRootViewController(animated: true)
         }
     }
 }

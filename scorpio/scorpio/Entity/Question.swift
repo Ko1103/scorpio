@@ -12,6 +12,7 @@ import RealmSwift
 class Question: Object {
     @objc dynamic var id = ""
     @objc dynamic var typeId = ""
+    @objc dynamic var title = ""
     var choicesId = List<String>()
     @objc dynamic var required = false
     @objc dynamic var multipleAnswer = false
