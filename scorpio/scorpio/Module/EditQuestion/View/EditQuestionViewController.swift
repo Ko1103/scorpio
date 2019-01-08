@@ -31,6 +31,15 @@ class EditQuestionViewController: UITableViewController {
     private var other: Bool = false
 
     override func viewDidLoad() {
+        self.required = self.question.required
+        self.multipleSelection = self.question.multipleAnswer
+        if let choiceId = self.question.choicesId.last {
+            let choice = Interactor.get(object: Choice.self, primarykey: choiceId)
+            if let choice = choice, choice.title == "その他" {
+                self.other = true
+                self.otherSwitch.setOn(self.other, animated: true)
+            }
+        }
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "作成", style: .plain, target: self, action: #selector(self.doneAction(_:)))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelAction(_:)))
         // setup textfield
@@ -38,6 +47,7 @@ class EditQuestionViewController: UITableViewController {
         self.choice1TextField.delegate = self
         self.choice2TextField.delegate = self
         self.choice3TextField.delegate = self
+        self.titleTextField.text = self.question.title
         self.titleTextField.returnKeyType = .done
         self.choice1TextField.returnKeyType = .done
         self.choice2TextField.returnKeyType = .done
@@ -45,7 +55,6 @@ class EditQuestionViewController: UITableViewController {
         // setup uiswitch
         self.requiredSwitch.setOn(self.required, animated: false)
         self.multipleSelectionSwitch.setOn(self.multipleSelection, animated: false)
-        self.otherSwitch.setOn(self.other, animated: true)
     }
 
     @IBAction func switchRequiredAction(_ sender: UISwitch) {

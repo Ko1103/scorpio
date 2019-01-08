@@ -32,6 +32,11 @@ class NewQuestionnaireViewController: UIViewController {
         self.questionCountLabel.text = String(count)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
+
     @objc func createQuestionnaireAction() {
         // 作成
         self.navigationController?.popViewController(animated: true)
