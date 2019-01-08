@@ -12,6 +12,7 @@
 		D7DE86F364DF2EAC0F0042D3 /* Pods_scorpioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D575517010CC99EDF82DDB /* Pods_scorpioTests.framework */; };
 		E6210E7921E33BE4005C7205 /* EditQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6210E7821E33BE4005C7205 /* EditQuestionViewController.swift */; };
 		E6210E7B21E33BF1005C7205 /* EditQuestionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6210E7A21E33BF1005C7205 /* EditQuestionViewController.storyboard */; };
+		E6210E7D21E509A6005C7205 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6210E7C21E509A6005C7205 /* UIViewController+Extensions.swift */; };
 		E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ADC8221D74B5800B290B5 /* AppDelegate.swift */; };
 		E63ADC8821D74B5800B290B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8621D74B5800B290B5 /* Main.storyboard */; };
 		E63ADC8A21D74B5A00B290B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63ADC8921D74B5A00B290B5 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		DD04B5E4C362DE516A41D2A2 /* Pods-scorpioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scorpioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scorpioUITests/Pods-scorpioUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E6210E7821E33BE4005C7205 /* EditQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionViewController.swift; sourceTree = "<group>"; };
 		E6210E7A21E33BF1005C7205 /* EditQuestionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditQuestionViewController.storyboard; sourceTree = "<group>"; };
+		E6210E7C21E509A6005C7205 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E63ADC7F21D74B5800B290B5 /* scorpio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scorpio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63ADC8221D74B5800B290B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E63ADC8721D74B5800B290B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				E63ADCCE21D7946600B290B5 /* UIColor+Extensions.swift */,
+				E6210E7C21E509A6005C7205 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				E63ADCB421D74F1900B290B5 /* Questionnaire.swift in Sources */,
 				E63ADCD221D7A11E00B290B5 /* RootWireframe.swift in Sources */,
 				E6210E7921E33BE4005C7205 /* EditQuestionViewController.swift in Sources */,
+				E6210E7D21E509A6005C7205 /* UIViewController+Extensions.swift in Sources */,
 				E63ADCE621D7B57100B290B5 /* QuestionViewController.swift in Sources */,
 				E63ADCB621D7505A00B290B5 /* Answer.swift in Sources */,
 				E63ADC8321D74B5800B290B5 /* AppDelegate.swift in Sources */,

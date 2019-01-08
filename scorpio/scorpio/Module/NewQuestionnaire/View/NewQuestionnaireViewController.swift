@@ -81,8 +81,16 @@ extension NewQuestionnaireViewController: UITableViewDelegate, UITableViewDataSo
         if self.questions.count > indexPath.row {
             let question = self.questions[indexPath.row]
             editQuestion.question = question
+        } else {
+            let question = Question()
+            question.id = UUID().uuidString
+            question.createdAt = Date()
+            self.questions.insert(question, at: indexPath.row)
+            editQuestion.question = question
         }
-        self.navigationController?.pushViewController(editQuestion, animated: true)
+        let navigation = UINavigationController()
+        navigation.setViewControllers([editQuestion], animated: true)
+        self.present(navigation, animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
