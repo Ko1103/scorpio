@@ -16,6 +16,7 @@ class NewQuestionnaireViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private var questionCount: Double = 1
     private var questions: [Question] = []
+    private var questionnaire: Questionnaire?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,19 @@ class NewQuestionnaireViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.tableView.reloadData()
+    }
+
+    private func setQuestions() {
+        if let questionnaire = self.questionnaire {
+            let questionIds = Array(questionnaire.questionsId)
+            var newQuestions: [Question] = []
+            for id in questionIds {
+                if let question = Interactor.get(object: Question.self, primarykey: id) {
+                    newQuestions.append(question)
+                }
+            }
+            self.questions = newQuestions
+        }
     }
 
     @objc func createQuestionnaireAction() {
@@ -92,6 +106,7 @@ extension NewQuestionnaireViewController: UITableViewDelegate, UITableViewDataSo
             question.createdAt = Date()
             self.questions.insert(question, at: indexPath.row)
             editQuestion.question = question
+            editQuestion.type = .update
         }
         let navigation = UINavigationController()
         navigation.setViewControllers([editQuestion], animated: true)

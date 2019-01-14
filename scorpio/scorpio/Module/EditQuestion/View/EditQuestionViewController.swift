@@ -9,6 +9,11 @@
 import UIKit
 
 class EditQuestionViewController: UITableViewController {
+
+    enum ViewÇontrollerType {
+        case new // questionの新規作成
+        case update // questionの更新
+    }
     enum SectionType {
         case title
         case details // choice count required
@@ -24,7 +29,7 @@ class EditQuestionViewController: UITableViewController {
     @IBOutlet private weak var choice2TextField: UITextField!
     @IBOutlet private weak var choice3TextField: UITextField!
 
-    var question: Question!
+    var question: Question! = nil
 
     private var required: Bool = false
     private var multipleSelection: Bool = false
@@ -33,12 +38,19 @@ class EditQuestionViewController: UITableViewController {
     override func viewDidLoad() {
         self.required = self.question.required
         self.multipleSelection = self.question.multipleAnswer
-        if let choiceId = self.question.choicesId.last {
-            let choice = Interactor.get(object: Choice.self, primarykey: choiceId)
-            if let choice = choice, choice.title == "その他" {
-                self.other = true
-                self.otherSwitch.setOn(self.other, animated: true)
+        // choice 表示
+        var row = 0
+        self.question.choicesId.forEach { (id) in
+            let choice = Interactor.get(object: Choice.self, primarykey: id)
+            if let choice = choice {
+                if choice.title == "その他" {
+                    self.other = true
+                    self.otherSwitch.setOn(self.other, animated: true)
+                } else {
+                    self.setTextInTextField(text: choice.title, row: row)
+                }
             }
+            row += 1
         }
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "作成", style: .plain, target: self, action: #selector(self.doneAction(_:)))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelAction(_:)))
@@ -55,6 +67,16 @@ class EditQuestionViewController: UITableViewController {
         // setup uiswitch
         self.requiredSwitch.setOn(self.required, animated: false)
         self.multipleSelectionSwitch.setOn(self.multipleSelection, animated: false)
+    }
+
+    func setTextInTextField(text: String, row: Int) {
+        if row == 0 {
+            self.choice1TextField.text = text
+        } else if row == 1 {
+            self.choice2TextField.text = text
+        } else if row == 2 {
+            self.choice3TextField.text = text
+        }
     }
 
     @IBAction func switchRequiredAction(_ sender: UISwitch) {
@@ -96,24 +118,38 @@ class EditQuestionViewController: UITableViewController {
             self.showSimpleAlert(title: "エラー", message: "答え3がありません。")
             return
         }
-        // データの作成
-        var choices = [
-            self.setNewChoice(choiceTitle: choice1),
-            self.setNewChoice(choiceTitle: choice2),
-            self.setNewChoice(choiceTitle: choice3)
-        ]
-        if self.other { choices.append(self.setNewChoice(choiceTitle: "その他")) }
-        if let question = self.question {
-            question.title = title
-            question.typeId = "01"
-            question.choicesId.append(objectsIn: choices)
-            question.required = self.required
-            question.multipleAnswer = self.multipleSelection
-            question.updatedAt = Date()
-            Interactor.update(object: question)
+
+        if self.question == nil {
+            // データの作成
+            var choices = [
+                self.setChoice(choiceTitle: choice1, choiceID: nil),
+                self.setChoice(choiceTitle: choice2, choiceID: nil),
+                self.setChoice(choiceTitle: choice3, choiceID: nil)
+            ]
+            if self.other { choices.append(self.setChoice(choiceTitle: "その他", choiceID: nil)) }
+            if let question = self.question {
+                question.title = title
+                question.typeId = "01"
+                question.choicesId.append(objectsIn: choices)
+                question.required = self.required
+                question.multipleAnswer = self.multipleSelection
+                question.updatedAt = Date()
+                Interactor.update(object: question)
+            }
         } else {
-            //ここに来ることはあり得ない
-            print("must be error")
+            guard let target = question else { return }
+            target.title = self.titleTextField.text!
+            var targetChoices = Array(target.choicesId)
+            var choices = [
+                self.setChoice(choiceTitle: choice1, choiceID: targetChoices[0]),
+                self.setChoice(choiceTitle: choice2, choiceID: targetChoices[1]),
+                self.setChoice(choiceTitle: choice2, choiceID: targetChoices[2]),
+            ]
+            if self.other { choices.append(self.setChoice(choiceTitle: "その他", choiceID: nil))}
+            target.choicesId.removeAll()
+            target.choicesId.append(objectsIn: choices)
+            target.updatedAt = Date()
+            Interactor.update(object: target)
         }
         if let navigation = self.navigationController {
             navigation.dismiss(animated: true, completion: nil)
@@ -129,12 +165,23 @@ class EditQuestionViewController: UITableViewController {
         }
     }
 
-    private func setNewChoice(choiceTitle: String) -> String {
+    private func setChoice(choiceTitle: String, choiceID: String?) -> String {
+        if let choiceID = choiceID {
+            if !choiceID.isEmpty {
+                guard let target = Interactor.get(object: Choice.self, primarykey: choiceID) else { return "" }
+                target.title = choiceTitle
+                target.updatedAt = Date()
+                Interactor.update(object: target)
+                return target.id
+            }
+        }
+        // 更新ではなく新規作成
         let new = Choice()
         new.id = UUID().uuidString
         new.title = choiceTitle
         new.updatedAt = Date()
         new.createdAt = Date()
+        Interactor.update(object: new)
         return new.id
     }
 
