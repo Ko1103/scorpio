@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+
 
 class QuestionnaireViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+//    private var items: Observable<[Questionnaire]> {
+//        return Observable.create { (observer: AnyObserver<[Questionnaire]>) -> Disposable in
+//            let items: [Questionnaire] = Interactor.getAll()
+//            observer.onNext(items)
+//            observer.onCompleted()
+//            return Disposables.create()
+//        }
+//    }
     private let wireframe = RootWireframe()
 
     override func viewDidLoad() {
@@ -20,6 +29,18 @@ class QuestionnaireViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "結果", style: .plain, target: self, action: #selector(self.segueToResult))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.segueToNew))
         // setup tableview
+        let items = Observable.create { (observer: AnyObserver<[Questionnaire]>) -> Disposable in
+            let items: [Questionnaire] = Interactor.getAll()
+            observer.onNext(items)
+            observer.onCompleted()
+            return Disposables.create()
+        }
+        self.tableView.rx.
+            .modelSelected(String.self)
+            .subscribe(onNext:  { value in
+                print("押されました。")
+            })
+            .disposed
     }
 
     @objc private func segueToNew() {
@@ -42,7 +63,7 @@ extension QuestionnaireViewController: UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

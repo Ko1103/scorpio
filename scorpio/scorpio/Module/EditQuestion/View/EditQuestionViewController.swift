@@ -145,6 +145,7 @@ class EditQuestionViewController: UITableViewController {
                 self.setChoice(choiceTitle: choice2, choiceID: targetChoices[1]),
                 self.setChoice(choiceTitle: choice2, choiceID: targetChoices[2]),
             ]
+            
             if self.other { choices.append(self.setChoice(choiceTitle: "その他", choiceID: nil))}
             target.choicesId.removeAll()
             target.choicesId.append(objectsIn: choices)

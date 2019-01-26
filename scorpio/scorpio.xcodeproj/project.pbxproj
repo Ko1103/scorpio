@@ -41,6 +41,7 @@
 		E64DB53E21DF531800069520 /* QuestionnaireViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64DB53D21DF531800069520 /* QuestionnaireViewController.storyboard */; };
 		E64DB54221DF5A5A00069520 /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64DB54121DF5A5A00069520 /* ResultViewController.storyboard */; };
 		E64DB54421DF5A6800069520 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64DB54321DF5A6800069520 /* ResultViewController.swift */; };
+		E6B0A1BC21FC395800ACF3A4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B0A1BB21FC395800ACF3A4 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		E64DB53D21DF531800069520 /* QuestionnaireViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionnaireViewController.storyboard; sourceTree = "<group>"; };
 		E64DB54121DF5A5A00069520 /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		E64DB54321DF5A6800069520 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		E6B0A1BB21FC395800ACF3A4 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B0A1BC21FC395800ACF3A4 /* RxSwift.framework in Frameworks */,
 				BC20C3240938B8F35AECB061 /* Pods_scorpio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +143,7 @@
 		20EA214505BCD281E400FE39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6B0A1BB21FC395800ACF3A4 /* RxSwift.framework */,
 				6835C7B1EC26D48B4B168245 /* Pods_scorpio.framework */,
 				D5D575517010CC99EDF82DDB /* Pods_scorpioTests.framework */,
 				0863C820B926F6265AE65440 /* Pods_scorpioUITests.framework */,
@@ -596,15 +600,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-scorpio/Pods-scorpio-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -846,6 +846,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9886BK756P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = scorpio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -866,6 +870,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9886BK756P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = scorpio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

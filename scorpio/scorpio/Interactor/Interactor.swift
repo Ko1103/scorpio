@@ -52,3 +52,11 @@ class Interactor: InteractorInterface {
         return realm.object(ofType: T.self, forPrimaryKey: primarykey)
     }
 }
+
+extension Interactor where T:Questionnaire {
+    class func getAll<T:Object>()  -> [T] {
+        let realm = try! Realm()
+        let items = realm.objects(T.self)
+        return Array(items)
+    }
+}
